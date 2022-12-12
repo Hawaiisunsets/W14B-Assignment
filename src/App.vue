@@ -1,12 +1,24 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
+    <router-link to="/">Home</router-link>
+    <router-link to="/game">Game</router-link>
+    <LoginApp/>
+    <GameScreen/>
     <router-view/>
   </div>
 </template>
+
+<script>
+import LoginApp from "@/components/LoginApp.vue";
+import GameScreen from "@/components/GameScreen.vue";
+export default{
+  name : "App",
+  components : {
+    LoginApp,
+    GameScreen,
+  },
+}
+</script>
 
 <style>
 #app {
@@ -16,17 +28,7 @@
   text-align: center;
   color: #2c3e50;
 }
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+html{
+  background-color: bisque;
 }
 </style>
